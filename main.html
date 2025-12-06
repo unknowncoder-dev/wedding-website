@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/7b12bcc245.js" crossorigin="anonymous"></script>
+        
+        <title>Wedding Invite</title>
+    
+        <style>
+            .music-toggle {
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                background: white;
+                color: black;
+                font-size: 24px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 9999;
+                transition: transform 0.25s ease;
+            }
+    
+            .music-toggle.playing {
+                animation: spin 3s linear infinite;
+            }
+    
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to   { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    
+<body>
+    <audio id="bg-music" loop>
+        <source src="music/Queen - The Millionaire Waltz (Official Lyric Video).mp3" type="audio/mp3">
+    </audio>
+
+    <div id="music-btn" class="music-toggle">♫</div>
+
+    
+    <script>
+    const audio = document.getElementById("bg-music");
+    if (sessionStorage.getItem("playMusic") === "yes") {
+        audio.volume = 0.5;
+        audio.play();
+    }
+    </script>
+    
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">
+            <img src="img/logo.png" alt="Logo" class="logo-img">
+        </label>
+        
+        <ul class="text">
+            <li><a href="#story" onclick="myFunction()">OUR STORY</a></li>
+            <li><a href="#prewedding" onclick="myFunction()">super cool vid</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="home hz-margin">
+        <h3>Guess Who’s Getting Married?</h3>
+        <h1 class="title-small">Christofer & Yovita</h1>
+
+        <div class="container-out">
+            <div class="container-in text">
+                ...And guess again? </br>
+                You are invited!
+
+                <a href="https://calendar.app.google/7LaoSJTBNy17Jivj8"
+                    target="_blank"
+                    class="huge-btn">
+                    SAVE THE DATE!
+                    </a>
+
+
+            </div>
+
+            <div class="home-img" id="home-img-lg"></div>
+    
+        </div>
+    </div>
+    
+
+    
+    <div class="home-img home-img-sm"></div>
+
+    <div class="timeline hz-margin reveal">
+        <h2>Let's celebrate with us! <br>
+        </h2>
+        <div class="timeline-container">
+            <div class="timeline-img"></div>
+            <div class="timings">
+                <h3>01.&nbsp &nbsp Ceremony</h3>
+                <div class="text">Sunday, Dec. 28, 2025 <br>
+                    Gereja St. Paulus Pringgolayan <br>
+                    Mass time: 10 am <br> <br>
+                    <a href="https://maps.app.goo.gl/QN7FtTMmjRtjiKgx8" 
+                    target="_blank" 
+                    class="map-btn">Ceremony Location <br></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- meet the groom and bride -->
+    <div class="meet-section">
+
+        <h2 class="meet-title">Meet the Groom & Bride</h2>
+
+        <div class="meet-container">
+
+            <!-- Groom -->
+            <div class="meet-card">
+                <img src="img/groom.jpg" class="meet-photo" alt="Groom">
+
+                <h3 class="meet-name">Christofer Julio <br><br></h3>
+
+                <!-- <p class="meet-quote">
+                    The guy who always eat<br>
+                    the sandwich.
+                </p> -->
+
+                <div class="meet-parents">
+                    <div class="label">THE SON OF:</div>
+                    <div class="names">
+                        Juliantoro Gunawan &<br>
+                        Effi Susi
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bride -->
+            <div class="meet-card">
+                <img src="img/bride.jpg" class="meet-photo" alt="Bride">
+
+                <h3 class="meet-name">Yovita Permata Budi <br><br></h3>
+
+                <!-- <p class="meet-quote">
+                    The girl who loves to eat chips <br>
+                </p> -->
+
+                <div class="meet-parents">
+                    <div class="label">THE DAUGHTER OF:</div>
+                    <div class="names">
+                        Budi Suprapto &<br>
+                        Vinis Pudjiastuti
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <div class="v-reposition-container">
+        <div class="h-reposition-container">
+            <div id="story" class="hz-margin">
+
+                <!-- LEFT SIDE (title + gallery) -->
+                <div class="story-left reveal">
+                    <h2>Our <br> Love Story</h2>
+            
+                    <div class="story-gallery">
+                        <div class="gallery-wrapper">
+            
+                            <div class="gallery-track">
+                                <img src="img/childhood1.jpeg" class="gallery-item">
+                                <img src="img/childhood2.jpeg" class="gallery-item">
+                                <img src="img/childhood3.jpeg" class="gallery-item">
+                                <img src="img/childhood4.jpeg" class="gallery-item">
+                                <img src="img/childhood5.jpeg" class="gallery-item">
+                            </div>
+                            
+                            <div class="gallery-controls">
+                                <button class="gallery-btn prev">←</button>
+                                <button class="gallery-btn next">→</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- RIGHT SIDE -->
+                <div class="story-right text reveal">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    We’ve been together for so long… we can’t even remember when it all began. <br>
+                    We’ve celebrated fifteen birthdays side by side, and we’re still just as excited to plan the next one. <br>
+                    We’ve grown through milestones, graduations, countless trips, and all the little moments in between. <br>
+                    And three years of long-distance taught us one thing for sure — we really do love being together. <br><br>
+                    Now, we can’t wait to begin the rest of our forever.
+                </div>
+            
+            </div>
+            
+
+
+            <div class="gallery hz-margin reveal">
+                <div class="gallery-img"></div>
+                <div class="gallery-img"></div>
+                <div class="gallery-img"></div>
+            </div>
+
+
+            <div class="quote reveal">
+                    <h1>“If I have the gift of prophecy and can fathom all mysteries and all knowledge,
+                    and if I have a faith that can move mountains,
+                    but do not have love, I am nothing.”</h1>
+                <div class="author text">— 1 Corinthians 13:2</div>
+            </div>
+
+
+            <div class="hands" id="parallax1"></div>
+
+
+            
+            <div id="prewedding" class="prewedding-section">
+
+                <h2 class="prewedding-title">
+                    The Last Trip Before We Sign the Lifetime Subscription 😭💕
+                </h2>
+
+                <div class="video-wrapper" style="margin-top: 20px;">
+                    <video controls class="video-file">
+                        <source src="vid/pre-wedding_compressed.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+            
+            </div>
+            
+            
+            
+            <div class="auto-gallery">
+                <div class="auto-track">
+                    <!-- Original set -->
+                    <img src="img/gallery_last1.jpg" class="auto-item">
+                    <img src="img/gallery_last2.jpg" class="auto-item">
+                    <img src="img/gallery_last3.jpg" class="auto-item">
+                    <img src="img/gallery_last4.jpg" class="auto-item">
+            
+                    <!-- Duplicate set for smooth loop -->
+                    <img src="img/gallery_last1.jpg" class="auto-item">
+                    <img src="img/gallery_last2.jpg" class="auto-item">
+                    <img src="img/gallery_last3.jpg" class="auto-item">
+                    <img src="img/gallery_last4.jpg" class="auto-item">
+                </div>
+            </div>
+            
+            
+            <!-- ganti biar ga kapital k -->
+
+            <div class="parting-message reveal">
+                <h1>We expect you… <br>
+                    yes, YOU <br>
+                    👀</h1>
+
+            </div>
+
+
+            <footer>
+                <h2>Best Regards, </h2>
+                <h2>Christofer Julio</h2>
+                <h2>Yovita Permata Budi</h2>
+                <div class="text">
+                    © 2025 for our wedding. 
+                    <br>Made by 
+                    <a href="https://github.com/christoferjulio3" class="text">Me</a>
+                    <a href="https://scholar.google.com/citations?user=vJJ-qykAAAAJ&hl=en" class="text">, with a little help from my friend</a>
+                    <!-- and
+                    <a href="https://google.com" class="text">another friend</a>. -->
+                </div>
+                
+            </footer>
+        </div>
+    </div>
+
+
+
+
+    <script src="main.js"></script>
+    <!-- <script src="rsvp.js"></script>
+    <script src="gift.js"></script> -->
+
+
+</body>
+
+
+
+</html>
